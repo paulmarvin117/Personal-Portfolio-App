@@ -2,9 +2,10 @@ from fastapi import Depends, FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy import text
 from sqlalchemy.orm import Session
-from .routers import auth
+
 from .config import settings
 from .database import get_db
+from .routers import admin_content, auth, public
 
 app = FastAPI(title="Portfolio API")
 
@@ -16,6 +17,9 @@ app.add_middleware(
 )
 
 app.include_router(auth.router)
+app.include_router(public.router)
+app.include_router(admin_content.router)
+
 
 @app.get("/health")
 def health(db: Session = Depends(get_db)):

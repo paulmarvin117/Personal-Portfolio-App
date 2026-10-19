@@ -17,6 +17,7 @@ class Track(Base):
 
     journey_entries: Mapped[list["JourneyEntry"]] = relationship(back_populates="track")
     projects: Mapped[list["Project"]] = relationship(back_populates="track")
+    certificates: Mapped[list["Certificate"]] = relationship(back_populates="track")
 
 
 class JourneyEntry(Base):
@@ -73,6 +74,21 @@ class Profile(Base):
     headline: Mapped[str] = mapped_column(String(200), default="")
     bio: Mapped[str] = mapped_column(Text, default="")
     photo_blob_name: Mapped[str | None] = mapped_column(String(300))
+
+
+class Certificate(Base):
+    __tablename__ = "certificates"
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    track_id: Mapped[int] = mapped_column(ForeignKey("tracks.id"))
+    title: Mapped[str] = mapped_column(String(200))
+    issuer: Mapped[str] = mapped_column(String(150), default="")
+    issued_on: Mapped[date | None]
+    credential_url: Mapped[str | None] = mapped_column(String(500))
+
+    track: Mapped["Track"] = relationship(back_populates="certificates")
+
+
 
 
 class AdminUser(Base):
