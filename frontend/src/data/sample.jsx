@@ -1,11 +1,11 @@
 export const site = {
-  name: 'Your Name',
-  initials: 'YN',
+  name: 'PAUL MARVIN SSEKASI',
+  initials: 'PM',
   role: 'Software developer · Cloud engineer · Cybersecurity',
   photo: null, // later: '/images/me.jpg'
   intro: [
-    'Write two or three sentences about who you are and what you do.',
-    'Say what drives you and what you are working towards.',
+    "Hello, Am Paul Marvin and I am a software engineer who is passionate",
+    "about building software development(C#,Python and Rust stack) cloud engineering(Azure) and cybersecurity(red teaming)" 
   ],
 }
 
