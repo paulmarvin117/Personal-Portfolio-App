@@ -1,0 +1,31 @@
+# Secrets (never commit these)
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.pfx
+secrets/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Node
+node_modules/
+dist/
+build/
+
+# Local uploads and database dumps
+uploads/
+*.sqlite3
+*.sql
+*.dump
+
+# Editor and OS
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
