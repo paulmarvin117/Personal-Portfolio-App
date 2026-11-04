@@ -32,12 +32,12 @@ export default function Contact() {
     <section className="page narrow">
       <p className="eyebrow">Reach out</p>
       <h1>Let us talk</h1>
-      <p className="lead">Send a message, or start a WhatsApp chat directly.</p>
+      <p className="lead">Send a message or start a WhatsApp chat directly.</p>
 
       <form onSubmit={handleSubmit} className="form">
         <input type="email" required placeholder="Your email" value={email}
           onChange={(e) => setEmail(e.target.value)} />
-        <textarea required rows="5" maxLength="2000" placeholder="Your message" value={message}
+        <textarea required rows="6" maxLength="2000" placeholder="Your message" value={message}
           onChange={(e) => setMessage(e.target.value)} />
         <div className="form__row">
           <button type="submit" className="btn fill">Send message</button>

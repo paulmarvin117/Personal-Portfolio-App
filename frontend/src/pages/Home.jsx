@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <section className="page hero">
       <div className="avatar">
-        {site.photo ? <img src={site.photo} alt={site.name} /> : <div>Your photo</div>}
+        {site.photo ? <img src={site.photo} alt={site.name} /> : <div>Photo</div>}
       </div>
       <div className="hero__text">
         <p className="eyebrow">{site.role}</p>
